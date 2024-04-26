@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cv62g63c16252"]
+
+[ext_resource type="Texture2D" uid="uid://t3xmtb8kc63q" path="res://icon.svg" id="1_73kdi"]
+[ext_resource type="Script" path="res://Enemigo/Circulo/circulo.gd" id="1_yaxaf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gxtyc"]
+size = Vector2(117, 120)
+
+[node name="Enemy" type="CharacterBody2D" groups=["Enemigo"]]
+scale = Vector2(0.2, 0.2)
+collision_layer = 2
+script = ExtResource("1_yaxaf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2.5, 3.5)
+texture = ExtResource("1_73kdi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2.5, 2)
+shape = SubResource("RectangleShape2D_gxtyc")

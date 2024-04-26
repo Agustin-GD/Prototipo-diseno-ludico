@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgdajp6tbwn3x"]
+
+[ext_resource type="PackedScene" uid="uid://ca7se7aavs313" path="res://Personaje/Personaje.tscn" id="1_l4g86"]
+[ext_resource type="PackedScene" uid="uid://cv62g63c16252" path="res://Enemigo/enemy.tscn" id="2_e2pbb"]
+
+[node name="Mapa" type="Node2D"]
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_l4g86")]
+position = Vector2(949, 201)
+
+[node name="Enemy" parent="." instance=ExtResource("2_e2pbb")]
+position = Vector2(430, 342)
