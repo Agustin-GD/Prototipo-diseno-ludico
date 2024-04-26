@@ -14,3 +14,11 @@ config/name="Prototipo Diseño"
 run/main_scene="res://Mapa/Mapa.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
+
+[layer_names]
+
+2d_render/layer_1="Player"
+2d_render/layer_2="Enemigo"
+2d_render/layer_3="Cua"
+2d_render/layer_4="Tri"
+2d_render/layer_5="Cir"

@@ -5,7 +5,7 @@
 
 [node name="Mapa" type="Node2D"]
 
-[node name="Personaje" parent="." instance=ExtResource("1_l4g86")]
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_l4g86")]
 position = Vector2(949, 201)
 
 [node name="Enemy" parent="." instance=ExtResource("2_e2pbb")]
