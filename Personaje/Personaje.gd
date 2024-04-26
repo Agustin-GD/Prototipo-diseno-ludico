@@ -25,5 +25,17 @@ func _physics_process(delta):
 		velocity.x = directionx * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-
+		
+	if Input.is_action_just_pressed("Volver"):
+		collision_layer = 1
+	
+	if Input.is_action_just_pressed("Triangulo"):
+		collision_layer = 3
+	
+	if Input.is_action_just_pressed("Circulo"):
+		collision_layer = 4
+	
+	if Input.is_action_just_pressed("Cuadrado"):
+		collision_layer = 5
+	
 	move_and_slide()

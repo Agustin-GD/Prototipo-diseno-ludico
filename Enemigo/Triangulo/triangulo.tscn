@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://btgngpdpeh2xh"]
+
+[ext_resource type="Script" path="res://Enemigo/Triangulo/triangulo.gd" id="1_572r6"]
+[ext_resource type="Texture2D" uid="uid://cqo3flekao8ah" path="res://assets/enemigos/Triangulo_negro.png" id="2_w7w3m"]
+
+[node name="Enemy" type="CharacterBody2D" groups=["Enemigo"]]
+position = Vector2(0, 11)
+scale = Vector2(0.2, 0.2)
+collision_layer = 2
+script = ExtResource("1_572r6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2.5, 0)
+scale = Vector2(0.309973, 0.628272)
+texture = ExtResource("2_w7w3m")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(0, 5)
+polygon = PackedVector2Array(60, 60, -55, 60, 0, -60)
