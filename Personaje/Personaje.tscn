@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://ca7se7aavs313"]
+
+[ext_resource type="Script" path="res://Personaje/Personaje.gd" id="1_0mwpt"]
+[ext_resource type="Texture2D" uid="uid://t3xmtb8kc63q" path="res://icon.svg" id="1_888dg"]
+[ext_resource type="Script" path="res://Personaje/CharacterBody2D.gd" id="3_h8mfr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_snv61"]
+size = Vector2(26, 81)
+
+[sub_resource type="SkeletonModificationStack2D" id="SkeletonModificationStack2D_q7jx0"]
+enabled = true
+
+[node name="Personaje" type="CharacterBody2D"]
+position = Vector2(1, 8)
+script = ExtResource("1_0mwpt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, -24)
+shape = SubResource("RectangleShape2D_snv61")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(9, -21)
+scale = Vector2(0.242188, 0.640625)
+texture = ExtResource("1_888dg")
+
+[node name="Partes" type="Node" parent="."]
+
+[node name="PinJoint2D" type="PinJoint2D" parent="Partes"]
+position = Vector2(7, 46)
+node_a = NodePath("../..")
+node_b = NodePath("../Esqueleto")
+
+[node name="Esqueleto" type="Skeleton2D" parent="Partes"]
+position = Vector2(7, 46)
+modification_stack = SubResource("SkeletonModificationStack2D_q7jx0")
+script = ExtResource("3_h8mfr")
+
+[node name="Sprite2D" type="Sprite2D" parent="Partes/Esqueleto"]
+position = Vector2(7.5, 54.5)
+scale = Vector2(0.257813, 0.476563)
+texture = ExtResource("1_888dg")
+
+[node name="Bone2D" type="Bone2D" parent="Partes/Esqueleto"]
+position = Vector2(53, 62)
