@@ -40,7 +40,6 @@ texture = ExtResource("3_642wa")
 
 [node name="Triangulo" type="CollisionPolygon2D" parent="."]
 visible = false
-scale = Vector2(1, 1)
 polygon = PackedVector2Array(17, 13, 0, -19, -18, 13)
 
 [node name="Triangulo" type="Sprite2D" parent="Triangulo"]
