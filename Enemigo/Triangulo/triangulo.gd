@@ -6,7 +6,7 @@ var speed = 200
 func _physics_process(delta):
 	if personaje == null: 
 		get_tree().get_nodes_in_group("Player")
-	if personaje != null and personaje.collision_layer == 3:
+	if personaje != null and (personaje.collision_layer == 3 or personaje.collision_layer == 1):
 		velocity = position.direction_to(personaje.position) * speed
 		look_at(personaje.position)
 		move_and_slide()

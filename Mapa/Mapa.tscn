@@ -1,12 +1,92 @@
-[gd_scene load_steps=3 format=3 uid="uid://bgdajp6tbwn3x"]
+[gd_scene load_steps=9 format=3 uid="uid://bgdajp6tbwn3x"]
 
 [ext_resource type="PackedScene" uid="uid://ca7se7aavs313" path="res://Personaje/Personaje.tscn" id="1_l4g86"]
+[ext_resource type="PackedScene" uid="uid://cdjsl2srwsv33" path="res://Personaje/Partes/Parte.tscn" id="2_fb0na"]
 [ext_resource type="PackedScene" uid="uid://btgngpdpeh2xh" path="res://Enemigo/Triangulo/triangulo.tscn" id="2_hny2v"]
+[ext_resource type="PackedScene" uid="uid://cv62g63c16252" path="res://Enemigo/Circulo/circulo.tscn" id="3_xixf0"]
+[ext_resource type="PackedScene" uid="uid://60we7hb5sed4" path="res://Enemigo/Cuadrado/cuadrado.tscn" id="4_3rf20"]
+[ext_resource type="PackedScene" uid="uid://bxlcyuscdqa3w" path="res://Enemigo/Hexagono/hexagono.tscn" id="5_st4cv"]
+[ext_resource type="Texture2D" uid="uid://dckhsvs3e7giq" path="res://assets/Background/Background1.jpg" id="7_ns5hm"]
+[ext_resource type="PackedScene" uid="uid://dobxut4mitkdr" path="res://Mapa/Paredes/Pared.tscn" id="8_041lw"]
 
 [node name="Mapa" type="Node2D"]
 
 [node name="Personaje" parent="." instance=ExtResource("1_l4g86")]
-position = Vector2(949, 201)
+visibility_layer = 2
+position = Vector2(953, 197)
+motion_mode = 1
 
-[node name="Enemy" parent="." instance=ExtResource("2_hny2v")]
+[node name="Partes" type="Node" parent="."]
+
+[node name="Cuello" parent="." instance=ExtResource("2_fb0na")]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(950, 223)
+motion_mode = 1
+speed = 300
+
+[node name="Cuello2" parent="." instance=ExtResource("2_fb0na")]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(951, 239)
+motion_mode = 1
+speed = 290
+
+[node name="Cuello3" parent="." instance=ExtResource("2_fb0na")]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(951, 255)
+motion_mode = 1
+speed = 280
+
+[node name="Enemigos" type="Node" parent="."]
+
+[node name="Hexagono" parent="." instance=ExtResource("5_st4cv")]
+light_mask = 3
+position = Vector2(758, 556)
+collision_mask = 3
+
+[node name="Cuadrado" parent="." instance=ExtResource("4_3rf20")]
+light_mask = 3
+position = Vector2(461, 523)
+collision_mask = 3
+
+[node name="Circulo" parent="." instance=ExtResource("3_xixf0")]
+light_mask = 3
+position = Vector2(204, 481)
+collision_mask = 3
+
+[node name="Triangulo" parent="." instance=ExtResource("2_hny2v")]
+light_mask = 3
 position = Vector2(118, 72)
+collision_mask = 3
+
+[node name="Paredes" type="Node" parent="."]
+
+[node name="Fondo" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(597, 329)
+scale = Vector2(1.68571, 0.937143)
+texture = ExtResource("7_ns5hm")
+
+[node name="Node2D" parent="." instance=ExtResource("8_041lw")]
+position = Vector2(1, 104)
+
+[node name="Node2D2" parent="." instance=ExtResource("8_041lw")]
+position = Vector2(547, 649)
+rotation = 1.5708
+
+[node name="Node2D3" parent="." instance=ExtResource("8_041lw")]
+position = Vector2(1146, 649)
+rotation = 1.5708
+
+[node name="Node2D4" parent="." instance=ExtResource("8_041lw")]
+position = Vector2(1182, 98)
+
+[node name="Node2D5" parent="." instance=ExtResource("8_041lw")]
+position = Vector2(1097, -8)
+rotation = 1.5708
+
+[node name="Node2D6" parent="." instance=ExtResource("8_041lw")]
+position = Vector2(539, -12)
+rotation = 1.5708
