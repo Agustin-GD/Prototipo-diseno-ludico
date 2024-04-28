@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 class_name PlayerCharacter
 @onready var health = $Health
+@onready var timer = $Timer
+@onready var cuenta_regresiva = $"Timer/Cuenta Regresiva"
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
@@ -11,6 +13,10 @@ var vidas = 3
 
 func _ready():
 	$Health.text = str("HP: ") + str(vidas)
+	cuenta_regresiva.start()
+
+func _process(delta):
+	timer.text = "%02d:%02d" % time_left()
 
 func _physics_process(delta):
 
@@ -75,3 +81,9 @@ func _on_area_2d_body_entered(body):
 	vidas -= 1
 	if vidas < 1:
 		get_tree().quit()
+
+func time_left():
+	var time_left = cuenta_regresiva.time_left
+	var minute = floor(time_left / 60)
+	var second = int(time_left) % 60
+	return [minute, second]
