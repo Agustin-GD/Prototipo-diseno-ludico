@@ -1,10 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bxlcyuscdqa3w"]
+[gd_scene load_steps=3 format=3 uid="uid://bxlcyuscdqa3w"]
 
 [ext_resource type="Script" path="res://Enemigo/Hexagono/hexagono.gd" id="1_dvl7c"]
-[ext_resource type="Texture2D" uid="uid://t3xmtb8kc63q" path="res://icon.svg" id="2_ng1tf"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gxtyc"]
-size = Vector2(117, 120)
+[ext_resource type="Texture2D" uid="uid://bgwq624xx6iem" path="res://assets/enemigos/Hexagono_negro.png" id="2_i3vv4"]
 
 [node name="Enemy" type="CharacterBody2D" groups=["Enemigo"]]
 scale = Vector2(0.2, 0.2)
@@ -12,9 +9,8 @@ collision_layer = 2
 script = ExtResource("1_dvl7c")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(2.5, 3.5)
-texture = ExtResource("2_ng1tf")
+position = Vector2(2.38419e-07, 4.76837e-07)
+texture = ExtResource("2_i3vv4")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2.5, 2)
-shape = SubResource("RectangleShape2D_gxtyc")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-5, 85, 60, 50, 60, -20, -5, -60, -70, -20, -70, 50)

@@ -1,12 +1,16 @@
 extends CharacterBody2D
 
 class_name PlayerCharacter
+@onready var health = $Health
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 var InMovement = false
-# Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var vidas = 3
+
+func _ready():
+	$Health.text = str("HP: ") + str(vidas)
 
 func _physics_process(delta):
 
@@ -65,6 +69,9 @@ func _physics_process(delta):
 		$Serpi.set_visible(false)
 	
 	move_and_slide()
-	
-	
-	
+
+func _on_area_2d_body_entered(body):
+	$Health.text = str("HP: ") + str(vidas)
+	vidas -= 1
+	if vidas < 1:
+		get_tree().quit()

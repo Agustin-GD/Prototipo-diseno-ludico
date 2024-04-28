@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Personaje/Partes/Parte.gd" id="1_pqbrv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g1wmm"]
-size = Vector2(10.2123, 14.1841)
+size = Vector2(10, 13)
 
 [node name="Cuello" type="CharacterBody2D"]
 disable_mode = 2
@@ -13,8 +13,7 @@ collision_mask = 0
 script = ExtResource("1_pqbrv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2.81847, -8.62545)
-scale = Vector2(1, 1)
+position = Vector2(3, -8.5)
 shape = SubResource("RectangleShape2D_g1wmm")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
