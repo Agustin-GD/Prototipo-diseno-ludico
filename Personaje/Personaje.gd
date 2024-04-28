@@ -87,3 +87,8 @@ func time_left():
 	var minute = floor(time_left / 60)
 	var second = int(time_left) % 60
 	return [minute, second]
+	timer.time
+
+func _on_cuenta_regresiva_timeout():
+	cuenta_regresiva.stop()
+	get_tree().quit()
